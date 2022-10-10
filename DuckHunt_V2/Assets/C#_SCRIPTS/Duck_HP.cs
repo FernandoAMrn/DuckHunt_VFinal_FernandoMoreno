@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn_Ducks : MonoBehaviour
+public class Duck_HP : MonoBehaviour
 {
-    public GameObject Duck;
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -16,8 +16,11 @@ public class Spawn_Ducks : MonoBehaviour
         
     }
 
-    public void SpawnDuck()
+    private void OnTriggerEnter(Collider hit)
     {
-        //Instanciar el prefab del pato
+        if(hit.tag == "RangeOfDeath")
+        {
+
+        }
     }
 }
