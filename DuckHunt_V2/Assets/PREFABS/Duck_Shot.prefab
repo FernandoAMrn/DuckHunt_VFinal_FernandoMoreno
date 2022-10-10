@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3999577118118415521}
   - component: {fileID: 7861498776230275329}
   - component: {fileID: 1545023565882533073}
+  - component: {fileID: 7631857186046352634}
   m_Layer: 0
   m_Name: Duck_Shot
   m_TagString: Untagged
@@ -96,9 +97,25 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 41e201c7f4d663142ad37f4ef01d0845, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &7631857186046352634
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4678549823911266257}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 79a6bab32c524a0498842d46fd5eb0c3, type: 2}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
