@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
-    public float speed;
+    public float speed = 8f;
     Vector3 target;
 
     float activeTime = 10;

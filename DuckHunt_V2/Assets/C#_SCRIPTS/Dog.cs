@@ -20,7 +20,7 @@ public class Dog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, jumpPosition) > 0 && !isDead)
+        if (Vector2.Distance(transform.position, jumpPosition) > 0 && !isDead) //Llama oleada de patos cuando comienza el juego
             transform.position = Vector2.MoveTowards(transform.position, jumpPosition, 3 * Time.deltaTime);
         else
         {
