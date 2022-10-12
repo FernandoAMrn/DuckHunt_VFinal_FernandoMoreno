@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     public SpriteRenderer dogSprite;
     public Sprite[] victorySprites;
 
-    public TextMeshProUGUI roundText;
+    public Text roundText;
     int roundNumber = 1;
     int totalTrials = 10;
 
@@ -23,8 +24,10 @@ public class GameManager : MonoBehaviour
     int ducksCreated;
     bool isRoundOver;
 
-    public TextMeshProUGUI scoreText, hitsText;
+    public Text scoreText, hitsText;
     int score, hits, totalClicks;
+
+    public GameObject[] duckUI;
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +57,18 @@ public class GameManager : MonoBehaviour
         {
             GameObject _duck = Instantiate(duckPrefab, spwanPoints[Random.Range(0, spwanPoints.Length)].position, Quaternion.identity);
             ducksCreated++;
+
+            
+            
+            
+
+
         }
 
         StartCoroutine(TimeUp());
     }
+    [SerializeField]
+    private Color colorToTurnTo = Color.red;
 
     IEnumerator TimeUp()
     {
@@ -103,17 +114,20 @@ public class GameManager : MonoBehaviour
     IEnumerator RoundOver()
     {
         isRoundOver = true;
+        duckUI[1].SetActive(false);
         yield return new WaitForSeconds(1f);
 
         if (ducksCreated <= 0)
         {
             dogHit.SetActive(true);
             dogSprite.sprite = victorySprites[0];
+            
         }
         else if (ducksCreated == 1)
         {
             dogHit.SetActive(true);
             dogSprite.sprite = victorySprites[1];
+            
         }
         else 
         {
@@ -125,5 +139,7 @@ public class GameManager : MonoBehaviour
         dogMiss.SetActive(false);
         CallCreateDucks();
         isRoundOver = false;
+        
+        
     }
 }
