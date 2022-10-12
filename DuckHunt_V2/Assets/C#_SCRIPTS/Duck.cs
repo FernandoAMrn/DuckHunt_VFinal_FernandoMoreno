@@ -13,6 +13,7 @@ public class Duck : MonoBehaviour
     Rigidbody2D rb;
     bool muelto;
     bool isStartFalling;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +64,7 @@ public class Duck : MonoBehaviour
     {
         if (!muelto)
             StartCoroutine(Dead());
+        
     }
 
     IEnumerator Dead()

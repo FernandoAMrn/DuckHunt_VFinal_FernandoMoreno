@@ -28,21 +28,26 @@ public class GameManager : MonoBehaviour
     int score, hits, totalClicks;
 
     public GameObject[] duckUI;
+    public GameObject[] BulletUI;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
     }
-
+       
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
             totalClicks++;
-
+        
         scoreText.text = score.ToString("000");
+                
         hitsText.text = hits.ToString() + "/" + totalClicks.ToString();
+        
+        
     }
 
     public void CallCreateDucks()
@@ -58,7 +63,6 @@ public class GameManager : MonoBehaviour
             GameObject _duck = Instantiate(duckPrefab, spwanPoints[Random.Range(0, spwanPoints.Length)].position, Quaternion.identity);
             ducksCreated++;
 
-            
             
             
 
@@ -92,9 +96,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Hit()
     {
+        
         totalHits++;
+        BulletUI[0].SetActive(false);
         score += 10;
+        
         hits++;
+        
         bg.color = Color.white;
         yield return new WaitForSeconds(0.1f);
         bg.color = blueColor;
@@ -108,13 +116,14 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(RoundOver()); 
             }
         }
-        
+
     }
 
     IEnumerator RoundOver()
     {
         isRoundOver = true;
-        duckUI[1].SetActive(false);
+        
+        
         yield return new WaitForSeconds(1f);
 
         if (ducksCreated <= 0)
@@ -137,9 +146,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         dogHit.SetActive(false);
         dogMiss.SetActive(false);
+        BulletUI[0].SetActive(true);
+        BulletUI[1].SetActive(true);
+        BulletUI[2].SetActive(true);
         CallCreateDucks();
         isRoundOver = false;
         
         
     }
+
 }
