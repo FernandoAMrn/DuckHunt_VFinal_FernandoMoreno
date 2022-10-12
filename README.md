@@ -6,11 +6,11 @@ Acaso te gusta cazar animales (tch tch tch muy mal) pero por lo menos pueden ser
 Da click en el logo de aplicacion exe. de duck Hunt.
 
 Esta presente en la siguiente carpeta:
-Duck Hunt -> DuckHunt_VFinal_FernandoMoreno -> DuckHunt_V2 -> Game_X86_DuckHunt.
+Duck Hunt -> DuckHunt_VFinal_FernandoMoreno -> DuckHunt_V2 -> Game_X86_V.F
 
 Como jugar:
 
-Utiliza el mouse para apuntar y el click derecho del mismo para disparar.
+Utiliza el mouse para apuntar y el click izquierdo del mismo para disparar.
 Cuando empieze el juego tu fiel perro se lanazara a los arbustos para asustar a los patos.
 Cuando salgan comienza a disparar pero recuerda que unicamente tendras 3 balas por ronda. Usalas cuidadosamente.
 Si fallas las tres balas la siguiente ronda comenzara.
