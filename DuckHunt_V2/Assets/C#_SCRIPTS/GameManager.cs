@@ -113,7 +113,8 @@ public class GameManager : MonoBehaviour
             if (!isRoundOver)
             {
                 StopCoroutine(TimeUp());
-                StartCoroutine(RoundOver()); 
+                StartCoroutine(RoundOver());
+                duckUI[0].SetActive(false);
             }
         }
 
@@ -123,7 +124,7 @@ public class GameManager : MonoBehaviour
     {
         isRoundOver = true;
         
-        
+
         yield return new WaitForSeconds(1f);
 
         if (ducksCreated <= 0)
